@@ -1,8 +1,8 @@
 from concurrent import futures
 import grpc  
 
-import course_service_pb2  # Сгенерированные классы для работы с gRPC-сообщениями
-import course_service_pb2_grpc # Сгенерированный класс для работы с сервисом
+import course_service_pb2  
+import course_service_pb2_grpc
 
 
 class CourseServiceServicer(course_service_pb2_grpc.CourseServiceServicer):
