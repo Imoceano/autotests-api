@@ -12,12 +12,15 @@ class CourseServiceServicer(course_service_pb2_grpc.CourseServiceServicer):
         """Метод GetCourse обрабатывает входящий запрос"""
         print(f'Получен запрос к методу GetCourse c id : {request.course_id}')
 
-        return course_service_pb2.GetCourseResponse(
-            course_id=request.course_id,  
-            title="Автотесты API",       
-            description="Будем изучать написание API автотестов",  
-            message=f"{request.course_id},{request.title}, {request.description}"
-        )
+        response = course_service_pb2.GetCourseResponse()
+        response.course_id = request.course_id  
+        response.title = "Автотесты API" 
+        response.description = "Будем изучать написание API автотестов" 
+        response.message = f"{request.course_id}, Автотесты API, Будем изучать написание API автотестов"
+        
+        print(f"Отправляемый ответ: course_id={response.course_id}, title={response.title}, descpition={response.description}")
+        return response
+
     
 def serve():
     """Функция создает и запускает gRPC-сервер"""
