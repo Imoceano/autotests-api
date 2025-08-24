@@ -12,11 +12,10 @@ class CourseServiceServicer(course_service_pb2_grpc.CourseServiceServicer):
         """Метод GetCourse обрабатывает входящий запрос"""
         print(f'Получен запрос к методу GetCourse c id : {request.course_id}')
 
-        # Формируем и возвращаем ответное сообщение
         return course_service_pb2.GetCourseResponse(
-            course_id=request.course_id,  # из запроса
-            title="Автотесты API",        # всегда эта строка
-            description="Будем изучать написание API автотестов",  # всегда эта строка
+            course_id=request.course_id,  
+            title="Автотесты API",       
+            description="Будем изучать написание API автотестов",  
             message=f"{request.course_id},{request.title}, {request.description}"
         )
     
