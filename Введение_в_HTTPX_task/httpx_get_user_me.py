@@ -1,6 +1,6 @@
 import httpx
 
-#Post запрос на логин 
+#Post запрос на логин.
 login_response_payloads = {
     "email": "TestUserTask@gmail.com",
     "password": "Qwerty123"
@@ -13,7 +13,7 @@ print("Auth response:", login_response.status_code)
 print(login_request_data)
 
 
-#get запрос на получение инфы об авторизованном пользователе по accessToken, взятого из post запроса на логин
+#get запрос на получение инфы об авторизованном пользователе по accessToken, взятого из post запроса на логин.
 
 access_token = f"Bearer {login_request_data['token']['accessToken']}"
 headers = {"Authorization": access_token }
