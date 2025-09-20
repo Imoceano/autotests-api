@@ -4,3 +4,5 @@ grpc_example
 websocket_example
 tcp/ip_example
 httpx_example
+api_clients_example
+clients_example
